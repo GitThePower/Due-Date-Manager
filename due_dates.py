@@ -44,7 +44,9 @@ def task_time(task):
 
 	# hours remaining
 	hrs = d[3] - t[3]
-	if inc: hrs -= 1
+	if inc:
+		hrs -= 1
+		inc = False
 	if hrs < 0:
 		hrs += 24
 		inc = True
@@ -55,13 +57,13 @@ def task_time(task):
 
 	r = ""
 	if dys < 0: r = "OVERDUE!!!\n"
-	else: r = '|\t' + str(dys) + " Days " + str(hrs) + " Hours " + str(mins) + " Minutes\n"
+	else: r = '| ' + str(dys) + " Days " + str(hrs) + " Hours " + str(mins) + " Minutes\n"
 
 	sys.stdout.write(str(task[1]))
-	pad = 31 - len(str(task[1]))
-	while pad > 0:
-		sys.stdout.write('\t')
-		pad -= 4
+	pad = 36 - len(str(task[1]))
+	while pad >= 0:
+		sys.stdout.write(' ')
+		pad -= 1
 	sys.stdout.write(r)
 
 
