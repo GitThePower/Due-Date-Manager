@@ -1,13 +1,7 @@
-Geog-110_Assignment#1 1581022800.0
-Geog-110_Assignment#2 1582837200.0
 Geog-110_Assignment#3 1584043200.0
 Geog-110_Assignment#4 1586462400.0
 Geog-110_Assignment#5 1587672000.0
-Geog-110_Exam#1 1582232400.0
 Geog-110_Exam#2 1585684800.0
-Theater-100_Response#2 1580839200.0
-Theater-100_Response#3 1581444000.0
-Theater-100_Response#4 1581616800.0
 Theater-100_Response#5 1583859600.0
 Theater-100_Response#6 1584032400.0
 Theater-100_Mood_Board 1585242000.0
@@ -21,11 +15,3 @@ Theater-100_10min_Play_Response 1586318340.0
 Theater-100_Prod_Response#3 1587700740.0
 Theater-100_Final_Self-Assessment 1588093200.0
 Theater-100_Final_Group-Assessment 1588093200.0
-CompSci-197U_Quiz#1 1580705700.0
-CompSci-197U_Lab#1 1580705700.0
-CompSci-197U_Quiz#2 1581310500.0
-CompSci-197U_Lab#2 1581310500.0
-CompSci-197U_Quiz#3 1581915300.0
-CompSci-197U_Lab#3 1581915300.0
-CompSci-197U_Quiz#4 1582520100.0
-CompSci-197U_Lab#4 1582520100.0
