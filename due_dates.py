@@ -118,6 +118,7 @@ def rmv(filename, flag):
 
 		if flag == '1':
 			print_tasks(filename, 'a')
+			sys.stdout.write("\n(b) to go back\n")
 			sys.stdout.write("\nName of Task (No Spaces): ")
 
 		else: sys.stdout.write("Are you sure you want to remove all tasks (press y to continue)")
@@ -137,7 +138,8 @@ def rmv(filename, flag):
 	with open(filename, "w") as f:
 		f.write(content)
 
-	if flag == '1' and e: return c + " was removed."
+	if flag == '1' and c == 'b': return ""
+	elif flag == '1' and e: return c + " was removed."
 	elif flag == '1' and not e: return "Task does not exist."
 	elif flag == '2': return "Past due tasks removed."
 	return "All tasks removed."
@@ -151,7 +153,7 @@ def remove(filename):
 		sys.stdout.write("What would you like to do?\n")
 		sys.stdout.write("(1) Remove One Task\n")
 		sys.stdout.write("(2) Remove Past Due Tasks\n")
-		sys.stdout.write("(3) Remove All Tasks\n")
+		sys.stdout.write("(3) Remove All Tasks\n\n")
 		sys.stdout.write("(b) Go back to menu\n")
 		sys.stdout.write("(q) Quit\n")
 
