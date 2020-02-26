@@ -67,7 +67,7 @@ def task_time(task):
 	sys.stdout.write(r)
 
 
-def print_tasks(filename):
+def print_tasks(filename, flag):
 	with open(filename, "r") as f:
 		tasks = []
 
@@ -85,10 +85,10 @@ def print_tasks(filename):
 			sys.stdout.write("Top:\n")
 			for task in tasks[:3]:
 				task_time(task)
-
-			sys.stdout.write("_________________________\n")
-			for task in tasks[3:]:
-				task_time(task)
+			if flag != 't':
+				sys.stdout.write("_________________________\n")
+				for task in tasks[3:]:
+					task_time(task)
 
 
 def list(filename):
@@ -96,7 +96,7 @@ def list(filename):
 	c = ''
 
 	while(True):
-		print_tasks(filename)
+		print_tasks(filename, 'a')
 
 		sys.stdout.write("\n(b) Go back to menu\n")
 		sys.stdout.write("(q) Quit\n")
@@ -117,7 +117,7 @@ def rmv(filename, flag):
 		e = False
 
 		if flag == '1':
-			print_tasks(filename)
+			print_tasks(filename, 'a')
 			sys.stdout.write("\nName of Task (No Spaces): ")
 
 		else: sys.stdout.write("Are you sure you want to remove all tasks (press y to continue)")
@@ -154,6 +154,7 @@ def remove(filename):
 		sys.stdout.write("(3) Remove All Tasks\n")
 		sys.stdout.write("(b) Go back to menu\n")
 		sys.stdout.write("(q) Quit\n")
+
 		if c == 'strawberry yogurt': sys.stdout.write("\nInvalid Input\n")
 		else: sys.stdout.write('\n' + c + '\n')
 
@@ -172,11 +173,14 @@ if __name__ == '__main__':
 	c = ''
 
 	while(True):
-		sys.stdout.write("Menu:\n\n")
-		sys.stdout.write("(a) Add\n")
-		sys.stdout.write("(l) List\n")
-		sys.stdout.write("(r) Remove\n")
+		print_tasks(filename, 't')
+
+		sys.stdout.write("\nMain Menu:\n")
+		sys.stdout.write("(a) Add Task\n")
+		sys.stdout.write("(l) List All\n")
+		sys.stdout.write("(r) Remove Task\n")
 		sys.stdout.write("(q) Quit\n")
+
 		if c == 'strawberry yogurt': sys.stdout.write("\nInvalid Input\n")
 		else: sys.stdout.write("\n\n")
 
