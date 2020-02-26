@@ -67,32 +67,36 @@ def task_time(task):
 	sys.stdout.write(r)
 
 
+def print_tasks(filename):
+	with open(filename, "r") as f:
+		tasks = []
+
+		for line in f:
+			task = line.split()
+			tasks.append((float(task[1]), task[0]))
+
+		tasks.sort()
+		if len(tasks) <= 3:
+			sys.stdout.write("Top:\n")
+			for task in tasks[:]:
+				task_time(task)
+
+		else:
+			sys.stdout.write("Top:\n")
+			for task in tasks[:3]:
+				task_time(task)
+
+			sys.stdout.write("_________________________\n")
+			for task in tasks[3:]:
+				task_time(task)
+
+
 def list(filename):
 	os.system('clear')
 	c = ''
 
 	while(True):
-		with open(filename, "r") as f:
-			tasks = []
-
-			for line in f:
-				task = line.split()
-				tasks.append((float(task[1]), task[0]))
-
-			tasks.sort()
-			if len(tasks) <= 3:
-				sys.stdout.write("Top:\n")
-				for task in tasks[:]:
-					task_time(task)
-
-			else:
-				sys.stdout.write("Top:\n")
-				for task in tasks[:3]:
-					task_time(task)
-
-				sys.stdout.write("_________________________\n")
-				for task in tasks[3:]:
-					task_time(task)
+		print_tasks(filename)
 
 		sys.stdout.write("\n(b) Go back to menu\n")
 		sys.stdout.write("(q) Quit\n")
@@ -112,7 +116,10 @@ def rmv(filename, flag):
 		c = ''
 		e = False
 
-		if flag == '1': sys.stdout.write("Name of Task (No Spaces): ")
+		if flag == '1':
+			print_tasks(filename)
+			sys.stdout.write("\nName of Task (No Spaces): ")
+
 		else: sys.stdout.write("Are you sure you want to remove all tasks (press y to continue)")
 
 		c = input()
